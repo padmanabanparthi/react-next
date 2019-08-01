@@ -19,26 +19,26 @@ export default class extends React.Component {
         naturalSlideWidth={100}
         naturalSlideHeight={70}
         totalSlides={6}
-        visibleSlides={2}
+        visibleSlides={3}
       >
         <Slider style={sliderStyle}>
-        <Slide index={0}>
-            <ReactPlayer url='https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8' controls="true"/>
+        <Slide tabIndex={1} index={0}>
+            <ReactPlayer width="85%" height="auto" url='https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8' controls="true"/>
           </Slide>
-          <Slide index={1}>
-            <ReactPlayer url='https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8' controls="true"/>
+          <Slide tabIndex={2} index={1}>
+            <ReactPlayer width="85%" height="auto" url='https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8' controls="true"/>
           </Slide>
-          <Slide index={2}>
-            <ReactPlayer url='https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8' controls="true"/>
+          <Slide tabIndex={3} index={2}>
+            <ReactPlayer width="85%" height="auto" url='https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8' controls="true"/>
           </Slide>
-          <Slide index={3}>
-            <ReactPlayer url='https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8' controls="true"/>
+          <Slide tabIndex={4} index={3}>
+            <ReactPlayer width="85%" height="auto" url='https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8' controls="true"/>
           </Slide>
-          <Slide index={4}>
-            <ReactPlayer url='https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8' controls="true"/>
+          <Slide tabIndex={5} index={4}>
+            <ReactPlayer width="85%" height="auto" url='https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8' controls="true"/>
           </Slide>
-          <Slide index={5}>
-            <ReactPlayer url='https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8' controls="true"/>
+          <Slide tabIndex={6} index={5}>
+            <ReactPlayer width="85%" height="auto" url='https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8' controls="true"/>
           </Slide>
         </Slider>
         <ButtonBack>Back</ButtonBack>

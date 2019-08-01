@@ -19,6 +19,7 @@
     "pure-react-carousel": "^1.21.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-player": "^1.11.1"
+    "react-player": "^1.11.1",
+    "react-slick": "^0.24.0"
   }
 }
