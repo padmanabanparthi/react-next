@@ -151,35 +151,60 @@ function (_Component) {
           props = Object(_babel_runtime_corejs2_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_3__["default"])(_this$props, ["index"]);
 
       var cur = this.props.currentSlide + 1;
+      var divStyle = {
+        border: '5px solid #ffffff',
+        boxShadow: '0px 0px 10px #cccccc'
+      };
+      var videoContainer = {
+        marginLeft: '-50%',
+        width: '150%',
+        position: 'sticky',
+        zIndex: '9999 !important',
+        padding: '10px'
+      };
+      var imageContainer = {
+        margin: '10% 40px 10% -40px'
+      };
 
       if (cur == index) {
         return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, props, {
+          style: videoContainer,
           className: "slide" + index,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 12
+            lineNumber: 27
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(react_player__WEBPACK_IMPORTED_MODULE_11___default.a, {
           url: "https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8",
           playing: true,
-          width: 300,
           controls: "true",
+          width: "100%",
+          height: "auto",
+          style: divStyle,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 13
+            lineNumber: 28
           },
           __self: this
         }));
       } else {
         return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, props, {
+          style: imageContainer,
           className: "slide" + index,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 19
+            lineNumber: 34
           },
           __self: this
-        }), "Test Content");
+        }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("img", {
+          src: "https://dummyimage.com/300",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 35
+          },
+          __self: this
+        }));
       }
     }
   }]);
@@ -206,8 +231,6 @@ function (_Component2) {
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_6__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_7__["default"])(SimpleSlider)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__["default"])(_this), "state", {
-      activeSlide: 0,
-      activeSlide2: 0,
       currentslide: 0
     });
 
@@ -226,6 +249,7 @@ function (_Component2) {
         slidesToShow: 3,
         slidesToScroll: 1,
         centerMode: true,
+        centerPadding: "60px",
         beforeChange: function beforeChange(current, next) {
           return _this2.setState({
             activeSlide: next
@@ -240,55 +264,13 @@ function (_Component2) {
       return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 59
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("h2", {
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(react_slick__WEBPACK_IMPORTED_MODULE_10___default.a, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, settings, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
-        },
-        __self: this
-      }, "beforeChange and afterChange hooks"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 47
-        },
-        __self: this
-      }, "Current slide ", this.state.currentslide), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 48
-        },
-        __self: this
-      }, "BeforeChange => activeSlide: ", react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("strong", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 49
-        },
-        __self: this
-      }, this.state.activeSlide)), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 51
-        },
-        __self: this
-      }, "AfterChange => activeSlide: ", react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("strong", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 52
-        },
-        __self: this
-      }, this.state.activeSlide2)), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("h2", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 54
-        },
-        __self: this
-      }, "Custom Slides"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(react_slick__WEBPACK_IMPORTED_MODULE_10___default.a, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, settings, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 60
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(CustomSlide, {
@@ -296,7 +278,7 @@ function (_Component2) {
         currentSlide: this.state.currentslide,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 61
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(CustomSlide, {
@@ -304,7 +286,7 @@ function (_Component2) {
         currentSlide: this.state.currentslide,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 62
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(CustomSlide, {
@@ -312,7 +294,7 @@ function (_Component2) {
         currentSlide: this.state.currentslide,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 63
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(CustomSlide, {
@@ -320,7 +302,7 @@ function (_Component2) {
         currentSlide: this.state.currentslide,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 59
+          lineNumber: 64
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(CustomSlide, {
@@ -328,7 +310,7 @@ function (_Component2) {
         currentSlide: this.state.currentslide,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60
+          lineNumber: 65
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(CustomSlide, {
@@ -336,7 +318,7 @@ function (_Component2) {
         currentSlide: this.state.currentslide,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 66
         },
         __self: this
       })));
@@ -1561,14 +1543,17 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "next/head");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_SlickCarousel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/SlickCarousel */ "./components/SlickCarousel.js");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-jsx/style */ "styled-jsx/style");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_SlickCarousel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/SlickCarousel */ "./components/SlickCarousel.js");
 var _jsxFileName = "C:\\xampp\\htdocs\\Reactjs\\react-nextjs\\pages\\index.js";
+
 
 
 
@@ -1577,83 +1562,93 @@ var _jsxFileName = "C:\\xampp\\htdocs\\Reactjs\\react-nextjs\\pages\\index.js";
 // const HeaderCarousel = dynamic(() => import('../components/3dCarousel'));
 
 var Index = function Index() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "jsx-486385886",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 9
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 10
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("link", {
     href: "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css",
     rel: "stylesheet",
     integrity: "sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN",
     crossorigin: "anonymous",
+    className: "jsx-486385886",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 11
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("link", {
     rel: "stylesheet",
     type: "text/css",
     charset: "UTF-8",
     href: "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css",
+    className: "jsx-486385886",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 12
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("link", {
     rel: "stylesheet",
     type: "text/css",
     href: "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css",
+    className: "jsx-486385886",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 13
     },
     __self: this
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
     href: "/about",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 15
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+    className: "jsx-486385886",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 15
     },
     __self: this
-  }, "About Page")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+  }, "About Page")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
+    className: "jsx-486385886",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 16
     },
     __self: this
-  }, "Home Page"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_SlickCarousel__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, "Home Page"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_SlickCarousel__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 19
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
     onClick: function onClick() {
       return loadMorePosts("datahere");
     },
     color: "danger",
+    className: "jsx-486385886",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 20
     },
     __self: this
-  }, "Danger!"));
+  }, "Danger!"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
+    id: "486385886",
+    __self: this
+  }, ".slick-center.slick-current.jsx-486385886{position:absolute !important;left:26%;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkM6XFx4YW1wcFxcaHRkb2NzXFxSZWFjdGpzXFxyZWFjdC1uZXh0anNcXHBhZ2VzXFxpbmRleC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFvQm9CLEFBR3dDLDZCQUNwQixTQUNiIiwiZmlsZSI6IkM6XFx4YW1wcFxcaHRkb2NzXFxSZWFjdGpzXFxyZWFjdC1uZXh0anNcXHBhZ2VzXFxpbmRleC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBMaW5rIGZyb20gJ25leHQvbGluayc7XHJcbmltcG9ydCBIZWFkIGZyb20gJ25leHQvaGVhZCc7XHJcbmltcG9ydCBTbGlja1NsaWRlciBmcm9tICcuLi9jb21wb25lbnRzL1NsaWNrQ2Fyb3VzZWwnO1xyXG5cclxuLy8gaW1wb3J0IFB1cmVSZWFjdENhcm91c2VsIGZyb20gJy4uL2NvbXBvbmVudHMvUHVyZVJlYWN0Q2Fyb3VzZWwnO1xyXG4vL2ltcG9ydCBkeW5hbWljIGZyb20gJ25leHQvZHluYW1pYyc7XHJcbi8vIGNvbnN0IEhlYWRlckNhcm91c2VsID0gZHluYW1pYygoKSA9PiBpbXBvcnQoJy4uL2NvbXBvbmVudHMvM2RDYXJvdXNlbCcpKTtcclxuY29uc3QgSW5kZXggPSAoKSA9PiAoXHJcbiAgICA8ZGl2PlxyXG4gICAgICA8SGVhZD5cclxuICAgICAgPGxpbmsgaHJlZj1cImh0dHBzOi8vbWF4Y2RuLmJvb3RzdHJhcGNkbi5jb20vZm9udC1hd2Vzb21lLzQuNy4wL2Nzcy9mb250LWF3ZXNvbWUubWluLmNzc1wiIHJlbD1cInN0eWxlc2hlZXRcIiBpbnRlZ3JpdHk9XCJzaGEzODQtd3ZmWHBxcFpaVlFHSzZUQWg1UFZsR09mUU5IU29EMnhiRStRa1B4Q0FGbE5FZXZvRUgzU2wwc2liVmNPUVZuTlwiIGNyb3Nzb3JpZ2luPVwiYW5vbnltb3VzXCIgLz5cclxuICAgICAgPGxpbmsgcmVsPVwic3R5bGVzaGVldFwiIHR5cGU9XCJ0ZXh0L2Nzc1wiIGNoYXJzZXQ9XCJVVEYtOFwiIGhyZWY9XCJodHRwczovL2NkbmpzLmNsb3VkZmxhcmUuY29tL2FqYXgvbGlicy9zbGljay1jYXJvdXNlbC8xLjYuMC9zbGljay5taW4uY3NzXCIgLz5cclxuICAgICAgICA8bGluayByZWw9XCJzdHlsZXNoZWV0XCIgdHlwZT1cInRleHQvY3NzXCIgaHJlZj1cImh0dHBzOi8vY2RuanMuY2xvdWRmbGFyZS5jb20vYWpheC9saWJzL3NsaWNrLWNhcm91c2VsLzEuNi4wL3NsaWNrLXRoZW1lLm1pbi5jc3NcIiAvPlxyXG4gICAgICA8L0hlYWQ+XHJcbiAgICAgICAgPExpbmsgaHJlZj1cIi9hYm91dFwiPjxhPkFib3V0IFBhZ2U8L2E+PC9MaW5rPlxyXG4gICAgICAgIDxoMT5Ib21lIFBhZ2U8L2gxPlxyXG4gICAgICAgIHsvKiA8SGVhZGVyQ2Fyb3VzZWwvPiAqL31cclxuICAgICAgICB7LyogPFB1cmVSZWFjdENhcm91c2VsLz4gKi99XHJcbiAgICAgICAgPFNsaWNrU2xpZGVyLz5cclxuICAgICAgICA8YnV0dG9uIG9uQ2xpY2s9eygpID0+IGxvYWRNb3JlUG9zdHMoXCJkYXRhaGVyZVwiKX0gY29sb3I9XCJkYW5nZXJcIj5EYW5nZXIhPC9idXR0b24+XHJcbiAgICAgICAgPHN0eWxlIGpzeD57YFxyXG4gICAgICAgIC5zbGljay1jZW50ZXIuc2xpY2stY3VycmVudCB7XHJcbiAgICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGUgIWltcG9ydGFudDtcclxuICAgICAgICAgIGxlZnQ6IDI2JTtcclxuICAgICAgfVxyXG4gICAgICBgfTwvc3R5bGU+XHJcbiAgICA8L2Rpdj5cclxuKTtcclxuXHJcbmZ1bmN0aW9uIGxvYWRNb3JlUG9zdHMoZGF0YSl7XHJcbiAgICBhbGVydChcImhlbGxvXCIrZGF0YSk7XHJcbn1cclxuXHJcbmV4cG9ydCBkZWZhdWx0IEluZGV4O1xyXG4iXX0= */\n/*@ sourceURL=C:\\xampp\\htdocs\\Reactjs\\react-nextjs\\pages\\index.js */"));
 };
 
 function loadMorePosts(data) {
@@ -1926,6 +1921,17 @@ module.exports = require("react-player");
 /***/ (function(module, exports) {
 
 module.exports = require("react-slick");
+
+/***/ }),
+
+/***/ "styled-jsx/style":
+/*!***********************************!*\
+  !*** external "styled-jsx/style" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("styled-jsx/style");
 
 /***/ }),
 

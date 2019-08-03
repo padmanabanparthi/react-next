@@ -18,6 +18,12 @@ const Index = () => (
         {/* <PureReactCarousel/> */}
         <SlickSlider/>
         <button onClick={() => loadMorePosts("datahere")} color="danger">Danger!</button>
+        <style jsx>{`
+        .slick-center.slick-current {
+          position: absolute !important;
+          left: 26%;
+      }
+      `}</style>
     </div>
 );
 

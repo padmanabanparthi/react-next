@@ -7,17 +7,32 @@ class CustomSlide extends Component {
   render() {
     const { index, ...props } = this.props;
     const cur = this.props.currentSlide + 1;
+    const divStyle = {
+      border: '5px solid #ffffff',
+      boxShadow: '0px 0px 10px #cccccc'
+    };
+    const videoContainer = {
+      marginLeft:'-50%',
+      width: '150%',
+      position: 'sticky',
+      zIndex: '9999 !important',
+      padding:'10px'
+    };
+    const imageContainer = {
+      margin: '10% 40px 10% -40px'
+    };
+
     if (cur==index) {
       return(
-        <div {...props} className={"slide"+index}>
-          <ReactPlayer url='https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8' playing width={300} controls="true"/>
+        <div {...props} style={videoContainer} className={"slide"+index}>
+          <ReactPlayer url='https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8' playing controls="true" width="100%" height="auto" style={divStyle}/>
         </div>
       );
     }
     else{
       return(
-        <div {...props} className={"slide"+index}>
-         Test Content
+        <div {...props} style={imageContainer} className={"slide"+index}>
+         <img src="https://dummyimage.com/300" />
         </div>
       );
     }
@@ -26,8 +41,6 @@ class CustomSlide extends Component {
 
 export default class SimpleSlider extends Component {
   state = {
-    activeSlide: 0,
-    activeSlide2: 0,
     currentslide:0
   };
   render() {
@@ -38,20 +51,12 @@ export default class SimpleSlider extends Component {
       slidesToShow: 3,
       slidesToScroll: 1,
       centerMode:true,
+      centerPadding: "60px",
       beforeChange: (current, next) => this.setState({ activeSlide: next }),
       afterChange: current => this.setState({ currentslide: current })
     };
     return (
-      <div>
-        <h2>beforeChange and afterChange hooks</h2>
-        <p>Current slide {this.state.currentslide}</p>
-        <p>
-          BeforeChange => activeSlide: <strong>{this.state.activeSlide}</strong>
-        </p>
-        <p>
-          AfterChange => activeSlide: <strong>{this.state.activeSlide2}</strong>
-        </p>
-        <h2>Custom Slides</h2>
+      <div >
         <Slider {...settings}>
           <CustomSlide index={1} currentSlide={this.state.currentslide}/>
           <CustomSlide index={2} currentSlide={this.state.currentslide}/>
